@@ -1,0 +1,12 @@
+{
+  "name": "design-audit",
+  "version": "0.1.0",
+  "description": "Replaces vague 'looks good' UI feedback with a fixed, repeatable audit: walks a design system, UI, or app screen against 13 categories of proven UI/UX practice — iconography, color, typography, hierarchy, spacing, states, shadows, dark mode, overlays, and page patterns — and returns a severity-scored findings report with a concrete fix for each issue. Specifically flags AI/vibe-coded tells (emoji icons, clashing default palettes, duplicated modules, dead cards) since they're high-value, low-effort fixes.",
+  "author": {
+    "name": "Conrad Carbonell van Reck"
+  },
+  "homepage": "https://github.com/concava/design-audit",
+  "repository": "https://github.com/concava/design-audit",
+  "license": "MIT",
+  "keywords": ["design-system", "ui-ux", "audit", "design-review", "vibe-coding", "frontend"]
+}
