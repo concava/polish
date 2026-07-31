@@ -126,3 +126,16 @@ The criteria, common failures, and fixes for all 13 categories. Audit the design
 - **Generic icons as hero graphics.** ⚠️ AI tell. Replace with real **graphics** and lightly edited **screenshots of your actual product** (e.g. the analytics view, a password-protection screen).
 - **Flat presentation.** Even simple touches — product/link cards with a slight **skew** — elevate the page.
 - **Over-engineering.** Landing pages aren't about complexity; they're about presentation. Better presentation → better conversion.
+
+## 14. Accessibility
+
+**Good:** The design works for people who aren't using a mouse, aren't seeing full color, or aren't seeing the screen at all. This isn't a separate audience — it's the baseline. Accessibility failures are also usability failures for everyone else (low contrast is hard to read in sunlight; missing focus states break keyboard *and* power-user workflows).
+
+- **Insufficient color contrast.** Body text needs at least **4.5:1** contrast against its background (**3:1** for large/bold text ≥18px); interactive elements and icons that carry meaning need **3:1**. Check this wherever a light-tinted brand color sits on white, or light text sits on a mid-tone image/overlay.
+- ⚠️ AI tell: **Missing or invisible focus indicators.** AI-generated CSS frequently strips `outline` for aesthetics without adding a replacement. Every focusable element (link, button, input, custom control) needs a visible focus state distinct from hover — a ring or offset outline, not `outline: none` alone.
+- **Color as the only signal.** If red/green (or any single hue) is the only way to distinguish states — error vs. success, selected vs. not — add a second cue: an icon, a label, a pattern. Roughly 1 in 12 men have some form of color vision deficiency.
+- **Touch targets too small.** Tappable elements should be **at least 44×44px** (iOS) / **48×48px** (Android/Material), including padding — not just the visible icon or glyph. Icon-only buttons in dense toolbars are the most common offender.
+- **Missing semantics.** Buttons built from `<div>`/`<span>` with a click handler, images without `alt` text, form inputs without associated `<label>` elements, icon-only buttons without an accessible name. If reviewing code, grep for these directly rather than inferring from a screenshot.
+- **No keyboard path.** Anything reachable by mouse (dropdown menus, modals, custom selects, drag-to-reorder) needs an equivalent keyboard interaction and a visible, logical tab order. Modals need focus trapped inside them and returned to the trigger on close.
+- **Motion with no escape hatch.** Autoplaying carousels, parallax, or elaborate micro-interactions should respect `prefers-reduced-motion` — reduce or disable non-essential motion for users who request it.
+- **Note on verifiability:** several of these (focus order, keyboard traps, `prefers-reduced-motion`) can't be confirmed from a static screenshot. When auditing an image rather than code, say so explicitly ("could not verify keyboard behavior from a screenshot") rather than silently passing the category.
