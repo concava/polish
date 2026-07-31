@@ -1,4 +1,4 @@
-# polish
+# Polish
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.3.1-blue.svg)](CHANGELOG.md)
@@ -10,11 +10,11 @@ A coding-agent plugin (Claude Code, Codex, Cursor, Gemini CLI, Kimi Code) that a
 
 Ask an LLM to review a UI and you usually get generic encouragement — "looks clean, maybe tighten the spacing." That's not useful feedback, and it's especially unhelpful for AI/vibe-coded apps, which tend to fail in the *same* predictable ways: emojis standing in for icons, clashing default-bright color palettes, duplicated modules, dead no-op cards, sparse flyouts, generic icon-only landing pages. Those failures are easy to spot and cheap to fix — but only if something is actually checking for them instead of eyeballing the result.
 
-`polish` exists to replace that vibe-based pass with a fixed, repeatable rubric: 14 categories of established UI/UX principle, walked in order, every time, with a severity, an effort estimate, and a concrete fix attached to each finding. The goal is a report a designer or developer can act on directly, not one more paragraph of praise.
+`Polish` exists to replace that vibe-based pass with a fixed, repeatable rubric: 14 categories of established UI/UX principle, walked in order, every time, with a severity, an effort estimate, and a concrete fix attached to each finding. The goal is a report a designer or developer can act on directly, not one more paragraph of praise.
 
 ## What it does
 
-`polish` ships one skill, **design-system-audit**, which your agent runs whenever you ask it to review, critique, clean up, professionalize, or "make better" a design system, component library, set of screens, Figma file, or AI/vibe-coded UI — even if you never say the words "design system" or "audit."
+`Polish` ships one skill, **design-system-audit**, which your agent runs whenever you ask it to review, critique, clean up, professionalize, or "make better" a design system, component library, set of screens, Figma file, or AI/vibe-coded UI — even if you never say the words "design system" or "audit."
 
 It walks the design against 14 categories of UI/UX best practice:
 
@@ -41,7 +41,7 @@ A structured markdown report: a summary, findings per category with severity (Hi
 
 ## Install
 
-Installation differs by harness. If you use more than one, install `polish` separately for each.
+Installation differs by harness. If you use more than one, install `Polish` separately for each.
 
 ### Claude Code
 
@@ -70,7 +70,7 @@ This registers the repo-scoped marketplace at `.agents/plugins/marketplace.json`
 cursor-agent plugin marketplace add https://github.com/concava/polish
 ```
 
-Then in a `cursor-agent` session, run `/plugin`, open the Marketplace tab, select `polish`, and press Enter to install (Cursor doesn't yet have a non-interactive install command for a specific plugin).
+Then in a `cursor-agent` session, run `/plugin`, open the Marketplace tab, select `Polish`, and press Enter to install (Cursor doesn't yet have a non-interactive install command for a specific plugin).
 
 ### Gemini CLI
 
@@ -99,7 +99,7 @@ Any of these trigger the `design-system-audit` skill.
 ## Structure
 
 ```
-polish/
+Polish/
 ├── .claude-plugin/
 │   ├── plugin.json
 │   └── marketplace.json       # lets this repo be added directly via `claude plugin marketplace add`
