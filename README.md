@@ -1,5 +1,9 @@
 # design-audit
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](CHANGELOG.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+
 A Claude Code plugin that audits a design system, UI, or app screen against proven UI/UX principles — and hands back a specific, prioritized list of fixes instead of vague praise.
 
 ## Why it exists
@@ -66,13 +70,28 @@ design-audit/
 ├── .claude-plugin/
 │   ├── plugin.json
 │   └── marketplace.json       # lets this repo be added directly via `claude plugin marketplace add`
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   └── PULL_REQUEST_TEMPLATE.md
 ├── skills/
 │   └── design-system-audit/
-│       ├── SKILL.md               # the audit process, report template, severity guidance
+│       ├── SKILL.md               # the audit process, report template, severity/effort guidance
 │       └── references/
 │           └── checklist.md       # detailed criteria, failures, and fixes for all 14 categories
+├── CLAUDE.md               # repo conventions for anyone (human or agent) editing this repo
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
 └── README.md
 ```
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for project structure and how to propose a new criterion or category. This project follows the [Contributor Covenant](CODE_OF_CONDUCT.md).
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

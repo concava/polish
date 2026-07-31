@@ -1,0 +1,30 @@
+# Changelog
+
+All notable changes to this plugin are documented here. Versions follow
+[Semantic Versioning](https://semver.org/).
+
+## [0.2.0] - 2026-07-31
+
+### Added
+- New 14th audit category: **Accessibility** — color contrast ratios,
+  visible focus indicators, color-independent state signaling, touch
+  target size, semantic markup/ARIA, keyboard reachability, and
+  `prefers-reduced-motion`.
+- Evidence-gathering guidance in the audit process that distinguishes
+  auditing a codebase (grep tokens, markup, CSS) from auditing a
+  screenshot (explicitly flag what can't be verified from a static image).
+- An **Effort** tag (Quick/Involved) on every finding, alongside Severity,
+  so quick wins can be derived directly from the report.
+- `.claude-plugin/marketplace.json`, so the repo can be added directly as
+  a plugin marketplace via `claude plugin marketplace add`.
+
+### Changed
+- Category count updated from 13 to 14 throughout `SKILL.md` and
+  `README.md`.
+
+## [0.1.0] - 2026-07-31
+
+### Added
+- Initial release: the `design-system-audit` skill, auditing a design
+  system, UI, or screen against 13 categories of UI/UX best practice and
+  returning a structured, severity-scored findings report.
