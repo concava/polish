@@ -1,10 +1,10 @@
 # polish
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](CHANGELOG.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
-A Claude Code plugin that audits a design system, UI, or app screen against proven UI/UX principles — and hands back a specific, prioritized list of fixes instead of vague praise.
+A coding-agent plugin (Claude Code, Codex, Cursor, Gemini CLI, Kimi Code) that audits a design system, UI, or app screen against proven UI/UX principles — and hands back a specific, prioritized list of fixes instead of vague praise.
 
 ## Why it exists
 
@@ -14,7 +14,7 @@ Ask an LLM to review a UI and you usually get generic encouragement — "looks c
 
 ## What it does
 
-`polish` ships one skill, **design-system-audit**, which Claude runs whenever you ask it to review, critique, clean up, professionalize, or "make better" a design system, component library, set of screens, Figma file, or AI/vibe-coded UI — even if you never say the words "design system" or "audit."
+`polish` ships one skill, **design-system-audit**, which your agent runs whenever you ask it to review, critique, clean up, professionalize, or "make better" a design system, component library, set of screens, Figma file, or AI/vibe-coded UI — even if you never say the words "design system" or "audit."
 
 It walks the design against 14 categories of UI/UX best practice:
 
@@ -37,9 +37,13 @@ It specifically flags AI/vibe-coded tells — emojis as icons, clashing default-
 
 ## Output
 
-A structured markdown report: a summary, findings per category with severity (High/Medium/Low) and effort (Quick/Involved), the principle violated and the concrete fix for each, a "quick wins" list, and recommended next steps. Claude then offers to implement the fixes if you want revised tokens, component specs, or code.
+A structured markdown report: a summary, findings per category with severity (High/Medium/Low) and effort (Quick/Involved), the principle violated and the concrete fix for each, a "quick wins" list, and recommended next steps. Your agent then offers to implement the fixes if you want revised tokens, component specs, or code.
 
 ## Install
+
+Installation differs by harness. If you use more than one, install `polish` separately for each.
+
+### Claude Code
 
 ```bash
 # From this GitHub repo, as a marketplace
@@ -51,9 +55,29 @@ claude plugin marketplace add /path/to/polish
 claude plugin install polish@polish
 ```
 
+### Codex
+
+Codex reads a plugin manifest at `.codex-plugin/plugin.json`. In the Codex app or CLI's plugin-install flow, point it at this repository (`concava/polish` or `https://github.com/concava/polish`) to install directly from GitHub, or clone the repo and install from the local path.
+
+### Cursor
+
+Cursor reads a plugin manifest at `.cursor-plugin/plugin.json`. From Cursor's plugin manager, install from a Git repository using this repo's URL (`https://github.com/concava/polish`), or from a local clone.
+
+### Gemini CLI
+
+```bash
+gemini extensions install https://github.com/concava/polish
+```
+
+### Kimi Code
+
+```text
+/plugins install https://github.com/concava/polish
+```
+
 ## Use
 
-Ask Claude Code (or Claude with this plugin loaded):
+Ask your agent:
 
 > Review my UI
 > What's wrong with this design?
@@ -70,6 +94,12 @@ polish/
 ├── .claude-plugin/
 │   ├── plugin.json
 │   └── marketplace.json       # lets this repo be added directly via `claude plugin marketplace add`
+├── .codex-plugin/
+│   └── plugin.json            # Codex plugin manifest
+├── .cursor-plugin/
+│   └── plugin.json            # Cursor plugin manifest
+├── .kimi-plugin/
+│   └── plugin.json            # Kimi Code plugin manifest
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   └── PULL_REQUEST_TEMPLATE.md
@@ -79,11 +109,15 @@ polish/
 │       └── references/
 │           └── checklist.md       # detailed criteria, failures, and fixes for all 14 categories
 ├── CLAUDE.md               # repo conventions for anyone (human or agent) editing this repo
+├── GEMINI.md               # imports SKILL.md into Gemini CLI's context (see gemini-extension.json)
+├── gemini-extension.json   # Gemini CLI extension manifest
 ├── CHANGELOG.md
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 └── README.md
 ```
+
+Every harness manifest (`plugin.json` under `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.kimi-plugin/`, plus `gemini-extension.json`) points at the same `skills/` directory — there's one skill, described once, wired into five plugin manifests.
 
 ## Contributing
 

@@ -3,6 +3,16 @@
 All notable changes to this plugin are documented here. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] - 2026-07-31
+
+### Added
+- Plugin manifests for four additional agent harnesses, all pointing at
+  the same `skills/design-system-audit/` directory: `.codex-plugin/plugin.json`,
+  `.cursor-plugin/plugin.json`, `.kimi-plugin/plugin.json`, and
+  `gemini-extension.json` (with `GEMINI.md` importing `SKILL.md` into
+  Gemini CLI's context, since it has no native skills mechanism).
+- Per-harness install instructions in `README.md`.
+
 ## [0.2.0] - 2026-07-31
 
 ### Added

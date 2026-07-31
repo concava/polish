@@ -1,0 +1,12 @@
+{
+  "name": "polish",
+  "version": "0.3.0",
+  "description": "Audits a design system, UI, or app screen against 14 categories of UI/UX best practice and returns a severity- and effort-scored findings report with a concrete fix for each issue.",
+  "author": {
+    "name": "Conrad Carbonell"
+  },
+  "homepage": "https://github.com/concava/polish",
+  "license": "MIT",
+  "keywords": ["design-system", "ui-ux", "audit", "design-review", "vibe-coding", "frontend", "accessibility"],
+  "skills": "./skills/"
+}

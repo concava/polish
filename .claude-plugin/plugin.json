@@ -1,9 +1,9 @@
 {
   "name": "polish",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Replaces vague 'looks good' UI feedback with a fixed, repeatable audit: walks a design system, UI, or app screen against 14 categories of proven UI/UX practice — iconography, color, typography, hierarchy, spacing, states, shadows, dark mode, overlays, page patterns, and accessibility — and returns a severity- and effort-scored findings report with a concrete fix for each issue. Specifically flags AI/vibe-coded tells (emoji icons, clashing default palettes, duplicated modules, dead cards, missing focus indicators) since they're high-value, low-effort fixes.",
   "author": {
-    "name": "Conrad Carbonell van Reck"
+    "name": "Conrad Carbonell"
   },
   "homepage": "https://github.com/concava/polish",
   "repository": "https://github.com/concava/polish",

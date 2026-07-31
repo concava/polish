@@ -1,18 +1,29 @@
 # Contributing to polish
 
-`polish` is a Claude Code plugin, not a code library — its entire
-behavior lives in the two markdown files under `skills/design-system-audit/`.
-Contributing means editing prose and criteria, not shipping code.
+`polish` is a multi-harness agent plugin (Claude Code, Codex, Cursor, Gemini
+CLI, Kimi Code), not a code library — its entire behavior lives in the two
+markdown files under `skills/design-system-audit/`. Contributing means
+editing prose and criteria, not shipping code.
 
 ## Project structure
 
 ```
-.claude-plugin/plugin.json       # plugin manifest (name, version, description)
+.claude-plugin/plugin.json       # Claude Code plugin manifest
 .claude-plugin/marketplace.json  # lets this repo be added via `claude plugin marketplace add`
+.codex-plugin/plugin.json        # Codex plugin manifest
+.cursor-plugin/plugin.json       # Cursor plugin manifest
+.kimi-plugin/plugin.json         # Kimi Code plugin manifest
+gemini-extension.json            # Gemini CLI extension manifest
+GEMINI.md                        # imports SKILL.md into Gemini's context
 skills/design-system-audit/
   SKILL.md                       # the audit process, report template, severity/effort guidance
   references/checklist.md        # the 14 categories: criteria, failures, fixes
 ```
+
+All five manifests point at the same `skills/` directory — there is one
+skill, described once. If you change `name`, `version`, or `description`,
+update it in all five (see [CLAUDE.md](CLAUDE.md)'s "Keep these in sync"
+section).
 
 `SKILL.md` and `checklist.md` must stay in sync: every category listed in
 `SKILL.md`'s "The 14 categories" section must have a matching, numbered
