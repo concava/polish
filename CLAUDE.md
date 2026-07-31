@@ -1,4 +1,4 @@
-# Repo conventions for design-audit
+# Repo conventions for polish
 
 This file is for anyone (human or agent) editing this repo — it is not the
 skill itself. The skill Claude runs when auditing a design lives at

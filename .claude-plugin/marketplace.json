@@ -1,12 +1,12 @@
 {
-  "name": "design-audit",
+  "name": "polish",
   "owner": {
     "name": "Conrad Carbonell van Reck",
     "url": "https://github.com/concava"
   },
   "plugins": [
     {
-      "name": "design-audit",
+      "name": "polish",
       "source": "./",
       "description": "Audits a design system, UI, or app screen against 14 categories of proven UI/UX practice and returns a severity- and effort-scored findings report with a concrete fix for each issue."
     }

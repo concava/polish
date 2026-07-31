@@ -1,4 +1,4 @@
-# design-audit
+# polish
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](CHANGELOG.md)
@@ -10,11 +10,11 @@ A Claude Code plugin that audits a design system, UI, or app screen against prov
 
 Ask an LLM to review a UI and you usually get generic encouragement — "looks clean, maybe tighten the spacing." That's not useful feedback, and it's especially unhelpful for AI/vibe-coded apps, which tend to fail in the *same* predictable ways: emojis standing in for icons, clashing default-bright color palettes, duplicated modules, dead no-op cards, sparse flyouts, generic icon-only landing pages. Those failures are easy to spot and cheap to fix — but only if something is actually checking for them instead of eyeballing the result.
 
-`design-audit` exists to replace that vibe-based pass with a fixed, repeatable rubric: 14 categories of established UI/UX principle, walked in order, every time, with a severity, an effort estimate, and a concrete fix attached to each finding. The goal is a report a designer or developer can act on directly, not one more paragraph of praise.
+`polish` exists to replace that vibe-based pass with a fixed, repeatable rubric: 14 categories of established UI/UX principle, walked in order, every time, with a severity, an effort estimate, and a concrete fix attached to each finding. The goal is a report a designer or developer can act on directly, not one more paragraph of praise.
 
 ## What it does
 
-`design-audit` ships one skill, **design-system-audit**, which Claude runs whenever you ask it to review, critique, clean up, professionalize, or "make better" a design system, component library, set of screens, Figma file, or AI/vibe-coded UI — even if you never say the words "design system" or "audit."
+`polish` ships one skill, **design-system-audit**, which Claude runs whenever you ask it to review, critique, clean up, professionalize, or "make better" a design system, component library, set of screens, Figma file, or AI/vibe-coded UI — even if you never say the words "design system" or "audit."
 
 It walks the design against 14 categories of UI/UX best practice:
 
@@ -43,12 +43,12 @@ A structured markdown report: a summary, findings per category with severity (Hi
 
 ```bash
 # From this GitHub repo, as a marketplace
-claude plugin marketplace add concava/design-audit
-claude plugin install design-audit@design-audit
+claude plugin marketplace add concava/polish
+claude plugin install polish@polish
 
 # Or from a local clone, as a marketplace
-claude plugin marketplace add /path/to/design-audit
-claude plugin install design-audit@design-audit
+claude plugin marketplace add /path/to/polish
+claude plugin install polish@polish
 ```
 
 ## Use
@@ -66,7 +66,7 @@ Any of these trigger the `design-system-audit` skill.
 ## Structure
 
 ```
-design-audit/
+polish/
 ├── .claude-plugin/
 │   ├── plugin.json
 │   └── marketplace.json       # lets this repo be added directly via `claude plugin marketplace add`

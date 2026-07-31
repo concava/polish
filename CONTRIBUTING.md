@@ -1,6 +1,6 @@
-# Contributing to design-audit
+# Contributing to polish
 
-`design-audit` is a Claude Code plugin, not a code library — its entire
+`polish` is a Claude Code plugin, not a code library — its entire
 behavior lives in the two markdown files under `skills/design-system-audit/`.
 Contributing means editing prose and criteria, not shipping code.
 
