@@ -11,6 +11,7 @@ editing prose and criteria, not shipping code.
 .claude-plugin/plugin.json       # Claude Code plugin manifest
 .claude-plugin/marketplace.json  # lets this repo be added via `claude plugin marketplace add`
 .codex-plugin/plugin.json        # Codex plugin manifest
+.agents/plugins/marketplace.json # lets this repo be added via Codex's `/plugin marketplace add`
 .cursor-plugin/plugin.json       # Cursor plugin manifest
 .kimi-plugin/plugin.json         # Kimi Code plugin manifest
 gemini-extension.json            # Gemini CLI extension manifest
@@ -20,10 +21,9 @@ skills/design-system-audit/
   references/checklist.md        # the 14 categories: criteria, failures, fixes
 ```
 
-All five manifests point at the same `skills/` directory — there is one
-skill, described once. If you change `name`, `version`, or `description`,
-update it in all five (see [CLAUDE.md](CLAUDE.md)'s "Keep these in sync"
-section).
+All manifests point at the same `skills/` directory — there is one skill,
+described once. If you change `name`, `version`, or `description`, update
+it everywhere (see [CLAUDE.md](CLAUDE.md)'s "Keep these in sync" section).
 
 `SKILL.md` and `checklist.md` must stay in sync: every category listed in
 `SKILL.md`'s "The 14 categories" section must have a matching, numbered

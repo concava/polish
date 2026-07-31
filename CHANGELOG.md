@@ -3,6 +3,22 @@
 All notable changes to this plugin are documented here. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [0.3.1] - 2026-07-31
+
+### Fixed
+- Corrected the Codex and Cursor install instructions in `README.md` after
+  verifying against official/community documentation: Codex needs its own
+  repo-scoped marketplace manifest at `.agents/plugins/marketplace.json`
+  (distinct from `.claude-plugin/marketplace.json`, which only Claude Code
+  reads) for `/plugin marketplace add concava/polish` to work; Cursor
+  installs via `cursor-agent plugin marketplace add <url>` followed by an
+  interactive `/plugin` selection, since it has no non-interactive
+  per-plugin install command yet.
+
+### Added
+- `.agents/plugins/marketplace.json`, the repo-scoped marketplace manifest
+  Codex reads.
+
 ## [0.3.0] - 2026-07-31
 
 ### Added

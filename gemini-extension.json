@@ -1,6 +1,6 @@
 {
   "name": "polish",
   "description": "Audits a design system, UI, or app screen against 14 categories of UI/UX best practice and returns a severity- and effort-scored findings report with a concrete fix for each issue.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "contextFileName": "GEMINI.md"
 }

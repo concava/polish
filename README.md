@@ -1,7 +1,7 @@
 # polish
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.3.1-blue.svg)](CHANGELOG.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
 A coding-agent plugin (Claude Code, Codex, Cursor, Gemini CLI, Kimi Code) that audits a design system, UI, or app screen against proven UI/UX principles — and hands back a specific, prioritized list of fixes instead of vague praise.
@@ -57,11 +57,20 @@ claude plugin install polish@polish
 
 ### Codex
 
-Codex reads a plugin manifest at `.codex-plugin/plugin.json`. In the Codex app or CLI's plugin-install flow, point it at this repository (`concava/polish` or `https://github.com/concava/polish`) to install directly from GitHub, or clone the repo and install from the local path.
+```text
+/plugin marketplace add concava/polish
+/plugin install polish@polish
+```
+
+This registers the repo-scoped marketplace at `.agents/plugins/marketplace.json` and installs the plugin manifest at `.codex-plugin/plugin.json`.
 
 ### Cursor
 
-Cursor reads a plugin manifest at `.cursor-plugin/plugin.json`. From Cursor's plugin manager, install from a Git repository using this repo's URL (`https://github.com/concava/polish`), or from a local clone.
+```bash
+cursor-agent plugin marketplace add https://github.com/concava/polish
+```
+
+Then in a `cursor-agent` session, run `/plugin`, open the Marketplace tab, select `polish`, and press Enter to install (Cursor doesn't yet have a non-interactive install command for a specific plugin).
 
 ### Gemini CLI
 
@@ -96,6 +105,8 @@ polish/
 │   └── marketplace.json       # lets this repo be added directly via `claude plugin marketplace add`
 ├── .codex-plugin/
 │   └── plugin.json            # Codex plugin manifest
+├── .agents/plugins/
+│   └── marketplace.json       # repo-scoped Codex marketplace, lets this repo be added via `/plugin marketplace add`
 ├── .cursor-plugin/
 │   └── plugin.json            # Cursor plugin manifest
 ├── .kimi-plugin/
@@ -117,7 +128,7 @@ polish/
 └── README.md
 ```
 
-Every harness manifest (`plugin.json` under `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.kimi-plugin/`, plus `gemini-extension.json`) points at the same `skills/` directory — there's one skill, described once, wired into five plugin manifests.
+Every harness manifest (`plugin.json` under `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.kimi-plugin/`, plus `gemini-extension.json` and the marketplace manifests) points at the same `skills/` directory — there's one skill, described once, wired into five harnesses.
 
 ## Contributing
 

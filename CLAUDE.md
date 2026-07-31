@@ -21,12 +21,17 @@ plumbing that points at them.
 - `README.md`'s category list mirrors both of the above.
 - The category count is stated in three places in prose (`SKILL.md`,
   `README.md` ×2) — grep for the number before changing category count.
-- `name`, `version`, and `description` must match across all five
-  manifests: `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`,
-  `.codex-plugin/plugin.json`, `.cursor-plugin/plugin.json`,
-  `.kimi-plugin/plugin.json`, and `gemini-extension.json`. Grep for the
-  current version string before bumping — one miss leaves a harness on a
-  stale description.
+- `name`, `version`, and `description` must match across all manifests:
+  `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`,
+  `.codex-plugin/plugin.json`, `.agents/plugins/marketplace.json`,
+  `.cursor-plugin/plugin.json`, `.kimi-plugin/plugin.json`, and
+  `gemini-extension.json`. Grep for the current version string before
+  bumping — one miss leaves a harness on a stale description.
+- `.agents/plugins/marketplace.json` is Codex's repo-scoped marketplace
+  manifest (distinct from `.claude-plugin/marketplace.json`, which only
+  Claude Code reads) — it's what makes `/plugin marketplace add
+  concava/polish` work in Codex. Don't confuse the two or assume one
+  covers the other.
 - Each manifest's `description` should stay a shorter paraphrase of the
   README's "Why it exists" / "What it does" sections, not drift into a
   different framing per harness.
@@ -37,7 +42,7 @@ plumbing that points at them.
 
 ## Versioning
 
-Bump the `version` field in **all five manifests** (see above) for any
+Bump the `version` field in **all manifests** (see above) for any
 change to `SKILL.md` or `checklist.md` that changes what the audit checks
 for or how it reports — new/removed category, changed report structure,
 changed severity or effort semantics. Add a matching entry to
